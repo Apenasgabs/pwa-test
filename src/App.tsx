@@ -8,16 +8,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Just a test for a pwa applications with react and typescript
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://linktr.ee/apenasgabs"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
-        </a>
+About me         </a>
       </header>
     </div>
   );
