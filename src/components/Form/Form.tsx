@@ -13,7 +13,7 @@ const MyForm = () => {
 		formData.append('fileType', 'image/png');
 		if (selectedFile) {
 			console.log('selectedFile: ', selectedFile);
-			formData.append('Image', selectedFile, 'image.png');
+			formData.append('File', selectedFile, 'image.png');
 		}
 		formData.append('dInvitationsMedia', '1');
 		formData.append('title', '	Depoimento');
