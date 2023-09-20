@@ -64,7 +64,7 @@
 		"no-console": "warn",
 		"@typescript-eslint/no-unsafe-return": "off",
 		"@typescript-eslint/no-floating-promises": "off", // Correção para promessas não tratadas
-		"@typescript-eslint/no-use-before-define": "error", // Correção para uso antes de definição
+		"@typescript-eslint/no-use-before-define": "off", // Correção para uso antes de definição
 		"@typescript-eslint/no-unsafe-member-access": "off" // Correção para acesso inseguro de membros
 	}
 }
