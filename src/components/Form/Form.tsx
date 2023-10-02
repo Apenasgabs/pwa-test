@@ -1,53 +1,53 @@
-import { Button, Form, Input } from 'antd';
-import TextArea from 'antd/es/input/TextArea';
-import { MyFieldsProps } from './Form.types';
-import { submitMyForm } from './services/FormService';
-import { ChangeEvent, useState } from 'react';
-import { StyledVideoContainer } from './Form.styles';
+import { Button, Form, Input } from "antd";
+import TextArea from "antd/es/input/TextArea";
+import { MyFieldsProps } from "./Form.types";
+import { submitMyForm } from "./services/FormService";
+import { ChangeEvent, useState } from "react";
+import { StyledVideoContainer } from "./Form.styles";
 
 const MyForm = () => {
 	const [form] = Form.useForm<MyFieldsProps>();
 	const [selectedFile, setSelectedFile] = useState<File | null>(null);
 	const [videoUrl, setVideoUrl] = useState<string | undefined>(undefined);
 	const onFinish = (values: MyFieldsProps) => {
-		console.log('values: ', values);
+		console.log("values: ", values);
 		const formData = new FormData();
 		// formData.append('fileType', 'image/png');
-		formData.append('fileType', 'video/mp4');
+		formData.append("fileType", "video/mp4");
 		if (selectedFile) {
-			console.log('selectedFile: ', selectedFile);
-			formData.append('File', selectedFile);
+			console.log("selectedFile: ", selectedFile);
+			formData.append("File", selectedFile);
 		}
-		formData.append('IdInvitationsMedia', '1');
-		formData.append('title', '	Depoimento');
-		formData.append('testimony', 'um depoimento legal aqui ');
-		formData.append('name', 'meu nome');
-		formData.append('activeMedia', ' 	1');
-		formData.append('occupation', 'ocupado');
-		console.log('values: ', formData);
+		formData.append("IdInvitationsMedia", "1");
+		formData.append("title", "	Depoimento");
+		formData.append("testimony", "um depoimento legal aqui ");
+		formData.append("name", "meu nome");
+		formData.append("activeMedia", " 	1");
+		formData.append("occupation", "ocupado");
+		console.log("values: ", formData);
 
 		submitMyForm(formData);
 	};
 	const onFinishFailed = (errorInfo: any) => {
-		console.log('Failed:', errorInfo);
+		console.log("Failed:", errorInfo);
 	};
 	const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
 		if (event?.target?.files && event.target.files.length > 0) {
 			const file = event.target.files[0];
 			setSelectedFile(file); // Atualiza o estado com o arquivo selecionado
 			const blob = new Blob([file], { type: file.type });
-			console.log('blob: ', blob);
+			console.log("blob: ", blob);
 			const blobUrl = URL.createObjectURL(blob);
-			console.log('blobUrl: ', blobUrl);
+			console.log("blobUrl: ", blobUrl);
 			setVideoUrl(blobUrl);
 		} else {
 			setSelectedFile(null); // Nenhum arquivo selecionado, então definimos como null
 		}
 		if (selectedFile) {
 			const blob = new Blob([selectedFile], { type: selectedFile.type });
-			console.log('blob: ', blob);
+			console.log("blob: ", blob);
 			const blobUrl = URL.createObjectURL(blob);
-			console.log('blobUrl: ', blobUrl);
+			console.log("blobUrl: ", blobUrl);
 			setVideoUrl(blobUrl);
 		}
 	};

@@ -1,7 +1,5 @@
-const Menu  = ()=>{
+const Menu = () => {
+	return <> Menu </>;
+};
 
-
-  return<> Menu </>
-}
-
-export default Menu
+export default Menu;

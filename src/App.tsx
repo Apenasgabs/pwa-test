@@ -1,5 +1,5 @@
-import './App.css';
-import MyForm from './components/Form/Form';
+import "./App.css";
+import MyForm from "./components/Form/Form";
 
 function App() {
 	return (
@@ -13,7 +13,7 @@ function App() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					About me{' '}
+					About me{" "}
 				</a>
 			</header>
 		</div>
